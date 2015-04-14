@@ -248,7 +248,7 @@ class MancalaPlayer(Player):
         elif board.hasWon(self.opp):
             return 0.0
         else:
-            zero_d_factor = 2.0
+            zero_d_factor = 3.0
             next_d_factor = 1.0
             self_score = 0.0
             # intialize the score to return
