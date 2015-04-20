@@ -224,6 +224,7 @@ class Player:
             print "chose move", move, " with value", val
             return move
         elif self.type == self.CUSTOM:
+            val, move = self.alphaBetaMove(board, self.ply)
             # TODO: Implement a custom player
             # You should fill this in with a call to your best move choosing
             # function.  You may use whatever search algorithm and scoring
@@ -240,6 +241,9 @@ class Player:
 class rrx788(Player):
     """ Defines a player that knows how to evaluate a Mancala gameboard
         intelligently """
+
+    def __init__(self, playerNum, playerType):
+        super(rrx788, self).init(self, playerNum, playerType, 6)
 
     def score(self, board):
         """ Evaluate the Mancala board for this player """
